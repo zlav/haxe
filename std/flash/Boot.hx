@@ -240,6 +240,9 @@ class Boot extends flash.display.MovieClip {
 		aproto.insert = function(i,x) {
 			__this__.splice(i,0,x);
 		};
+		aproto.contains = function(obj) {
+			return __this__.indexOf(obj) != -1;
+		}
 		aproto.remove = function(obj) {
 			var idx = __this__.indexOf(obj);
 			if( idx == -1 ) return false;
@@ -265,6 +268,7 @@ class Boot extends flash.display.MovieClip {
 		aproto.setPropertyIsEnumerable("copy", false);
 		aproto.setPropertyIsEnumerable("insert", false);
 		aproto.setPropertyIsEnumerable("remove", false);
+		aproto.setPropertyIsEnumerable("contains", false);
 		aproto.setPropertyIsEnumerable("iterator", false);
 		#if (as3 || no_flash_override)
 		aproto.filterHX = function(f) {

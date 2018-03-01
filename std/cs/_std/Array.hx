@@ -399,6 +399,20 @@ import cs.NativeArray;
 		return false;
 	}
 
+	public function contains( x : T ) : Bool
+	{
+		var __a = __a;
+		var i = -1;
+		var length = length;
+		while (++i < length)
+		{
+			if (__a[i] == x)
+				return true;
+		}
+
+		return false;
+	}
+
 	public function map<S>( f : T -> S ) : Array<S> {
 		var ret = [];
 		for (elt in this)

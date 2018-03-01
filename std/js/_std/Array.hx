@@ -41,6 +41,14 @@ extern class Array<T> {
 		(cast this).splice(pos,0,x);
 	}
 
+	inline function contains( x : T ) : Bool {
+		#if (js_es >= 6)
+		return (cast this).includes(x);
+		#else
+		return this.indexOf(x) != -1;
+		#end
+	}
+
 	inline function remove( x : T ) : Bool {
 		return @:privateAccess HxOverrides.remove(this,x);
 	}

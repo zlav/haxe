@@ -153,7 +153,7 @@ extern class Array<T> {
 
 		This operation modifies `this` Array in place.
 
-		If `len` is < 0 or `pos` exceeds `this`.length, an empty Array [] is 
+		If `len` is < 0 or `pos` exceeds `this`.length, an empty Array [] is
 		returned and `this` Array is unchanged.
 
 		If `pos` is negative, its value is calculated from the end	of `this`
@@ -222,6 +222,15 @@ extern class Array<T> {
 		returns false.
 	**/
 	function remove( x : T ) : Bool;
+
+
+	/**
+		Returns whether `this` Array contains `x`.
+
+		If `x` is found by checking standard equality, the function returns `true`, otherwise
+		the function returns `false`.
+	**/
+	@:pure function contains( x : T ) : Bool;
 
 	/**
 		Returns position of the first occurrence of `x` in `this` Array, searching front to back.

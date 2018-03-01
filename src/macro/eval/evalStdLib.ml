@@ -198,6 +198,11 @@ module StdArray = struct
 		vbool (EvalArray.remove this equals x)
 	)
 
+	let contains = vifun1 (fun vthis x ->
+		let this = this vthis in
+		vbool (EvalArray.contains this equals x)
+	)
+
 	let reverse = vifun0 (fun vthis ->
 		let this = this vthis in
 		EvalArray.reverse this;
@@ -2717,6 +2722,7 @@ let init_standard_library builtins =
 		"pop",StdArray.pop;
 		"push",StdArray.push;
 		"remove",StdArray.remove;
+		"contains",StdArray.contains;
 		"reverse",StdArray.reverse;
 		"shift",StdArray.shift;
 		"slice",StdArray.slice;
