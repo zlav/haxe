@@ -605,12 +605,27 @@ and check_multireturn_param ctx t pos =
         | _ ->
                 ();
 
+and is_rest_type t =
+    match follow(t) with
+    | TAbstract ({a_path = ["haxe";"extern"],"Rest"},_) ->
+        true
+    | _ ->
+        false;
+
+and arg_name_lua (a,_) =
+    if is_rest_type a.v_type then
+        "..."
+    else
+        a.v_name;
+
 and gen_expr ?(local=true) ctx e = begin
     match e.eexpr with
       TConst c ->
         gen_constant ctx e.epos c;
     | TLocal v when v.v_name = "this" ->
         spr ctx "self";
+    | TLocal v when is_rest_type v.v_type ->
+        spr ctx "...";
     | TLocal v -> spr ctx (ident v.v_name)
     | TArray (e1,{ eexpr = TConst (TString s) }) when valid_lua_ident s && (match e1.eexpr with TConst (TInt _|TFloat _) -> false | _ -> true) ->
         gen_value ctx e1;
@@ -710,7 +725,7 @@ and gen_expr ?(local=true) ctx e = begin
         let old = ctx.in_value, ctx.in_loop in
         ctx.in_value <- None;
         ctx.in_loop <- false;
-        print ctx "function(%s) " (String.concat "," (List.map ident (List.map arg_name f.tf_args)));
+        print ctx "function(%s) " (String.concat "," (List.map ident (List.map arg_name_lua f.tf_args)));
         let fblock = fun_block ctx f e.epos in
         (match fblock.eexpr with
          | TBlock el ->
