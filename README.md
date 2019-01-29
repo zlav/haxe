@@ -1,9 +1,9 @@
-
 # [<img src="https://haxe.org/img/haxe-logo-horizontal.svg" alt="Haxe logo" width="140">](https://haxe.org) - [The Cross-Platform Toolkit](https://haxe.org)
 [![TravisCI Build Status](https://travis-ci.org/HaxeFoundation/haxe.svg?branch=development)](https://travis-ci.org/HaxeFoundation/haxe)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/HaxeFoundation/haxe?branch=development&svg=true)](https://ci.appveyor.com/project/HaxeFoundation/haxe)
 [![SauceLabs Test Status](https://saucelabs.com/buildstatus/haxe)](https://saucelabs.com/u/haxe)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/HaxeFoundation/haxe?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fzlav%2Fhaxe.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fzlav%2Fhaxe?ref=badge_shield)
 
 Haxe is an open source toolkit that allows you to easily build cross-platform tools and applications that target many mainstream platforms. The Haxe toolkit includes:
 
@@ -39,6 +39,9 @@ The Haxe project has several licenses, covering different parts of the projects.
  * The Neko virtual machine is released under the MIT license. Its bundled runtime libraries (ndll) and tools are released under open source licenses as described in https://github.com/HaxeFoundation/neko/blob/master/LICENSE
 
 For the complete Haxe licenses, please see https://haxe.org/foundation/open-source.html or [extra/LICENSE.txt](extra/LICENSE.txt).
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fzlav%2Fhaxe.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fzlav%2Fhaxe?ref=badge_large)
 
 ## Installing Haxe
 
